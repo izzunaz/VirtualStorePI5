@@ -1,0 +1,40 @@
+create table produto(
+	pro_id serial not null primary key,
+	pro_nome varchar(60),
+	pro_preco float);
+
+create table pessoa(
+	pes_id	serial primary key,
+	pes_nome	varchar(60),
+	pes_cpf	char(14),
+	pes_rg	varchar(20),
+	pes_data_nasc	date,
+	pes_rua	varchar(60),
+	pes_bairro	varchar(30),
+	pes_cidade	varchar(30),
+	pes_uf	char(2),
+	pes_cep	integer,
+	pes_email	varchar(40),
+	pes_senha	varchar(32),
+	pes_tipo varchar(30));
+
+create table fone(
+	fon_id	serial	primary key,
+	pes_id	integer,
+	fon_numero	varchar(20),
+	fon_descricao	varchar(30),
+	constraint rel_pessoa_fone foreign key (pes_id) references pessoa (pes_id));
+	
+create table forma_pgto(
+	fpg_id serial primary key,
+	fpg_descricao varchar(20),
+	fpg_num_max_parc integer,
+	fpg_num_padrao_parc integer,
+	fpg_intervalo_dias integer,
+	fpg_percentual_acres float);
+	
+CREATE TABLE usuario(
+	id_usu SERIAL PRIMARY KEY NOT NULL,
+	username VARCHAR(20) NOT NULL,
+	senha VARCHAR(20) NOT NULL,
+	tipo VARCHAR(20) NOT NULL);
