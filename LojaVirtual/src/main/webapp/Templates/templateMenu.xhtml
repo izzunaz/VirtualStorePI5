@@ -8,16 +8,17 @@
 <ui:composition>
 	<h:form>
 		<p:menubar style="margin-top:20px">
+			<p:menuitem value="Início" url="/publico/index.xhtml" />
+
 			<p:submenu label="Administrador" icon="pi pi-check">
-				<p:menuitem value="Início" url="/admin/principal" />
-				<p:menuitem value="Clientes" url="/admin/lista_cliente" />
-				<p:menuitem value="Produtos" url="/admin/lista_produto" />
-				<p:menuitem value="Formas de Pagamento" url="/admin/lista_formaPgto" />
-				<p:menuitem value="Carrinho" url="/admin/carrinho" />
+				<p:menuitem value="Início" url="/admin/principal.xhtml" />
+				<p:menuitem value="Clientes" url="/admin/lista_cliente.xhtml" />
+				<p:menuitem value="Produtos" url="/admin/lista_produto.xhtml" />
+				<p:menuitem value="Formas de Pagamento" url="/admin/lista_formaPgto.xhtml" />
 			</p:submenu>
 
 			<p:submenu label="Cliente" icon="pi pi-file">
-				<p:menuitem value="Carrinho" url="/cliente/carrinho" />
+				<p:menuitem value="Carrinho" url="/cliente/finalizar_compra.xhtml" />
 			</p:submenu>
 			<p:menuitem value="Novo Usuário" url="/publico/form_cliente.xhtml" />
 			<p:menuitem value="Logout" onclick="document.location='#{request.contextPath}/j_spring_security_logout'" />

@@ -153,9 +153,9 @@
 						</p:commandLink>
 					</h:column>
 				</h:dataTable>
-				<h:commandButton value="Excluir" action="#{pessoa.actionExcluir}" update="growl" />
-				<h:commandButton value="Gravar" action="#{pessoa.actionGravar}" update="growl" />
-				<h:commandButton value="Cancelar" oncomplete="cadDialog.hide()" />
+				<p:commandButton value="Excluir" action="#{pessoa.actionExcluir}" />
+				<p:commandButton value="Gravar" action="#{pessoa.actionGravar}"  />
+				<p:commandButton value="Cancelar" oncomplete="cadDialog.hide()" />
 			</p:outputPanel>
 		</p:dialog>
 	</h:form>

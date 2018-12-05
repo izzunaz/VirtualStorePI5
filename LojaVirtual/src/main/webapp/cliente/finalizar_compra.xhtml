@@ -13,7 +13,7 @@
 		<ui:insert name="header">
 			<ui:include src="/Templates/templateMenu.xhtml" />
 		</ui:insert>
-		<p:dataTable value="#{pedido.pedido.itensPedido}" var="item">
+		<p:dataTable value="#{carrinho.pedido.itensPedido}" var="item">
 			<f:facet name="header">
 				<h:outputLabel value="Produtos" />
 			</f:facet>
@@ -27,19 +27,19 @@
 				<f:facet name="header">
 					<h:outputLabel value="Quantidade" />
 				</f:facet>
-				<h:outputLabel id="qtde" value="#{item.quantidade}" />
+				<h:outputLabel id="qtde" value="#{item.ipe_qtde}" />
 			</p:column>
 			<p:column>
 				<f:facet name="header">
 					<h:outputLabel value="Valor Untário" />
 				</f:facet>
-				<h:outputLabel id="precoUnit" value="#{item.valorUnitario}" />
+				<h:outputLabel id="precoUnit" value="#{item.ipe_valorUnit}" />
 			</p:column>
 			<p:column>
 				<f:facet name="header">
 					<h:outputLabel value="Subtotal" />
 				</f:facet>
-				<h:outputLabel id="subtotal" value="#{item.subTotal}" />
+				<h:outputLabel id="subtotal" value="#{item.ipe_subTotal}" />
 			</p:column>
 		</p:dataTable>
 
