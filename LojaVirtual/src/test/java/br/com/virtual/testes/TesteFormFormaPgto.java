@@ -8,7 +8,7 @@ import static net.sourceforge.jwebunit.junit.JWebUnit.*;
 
 import net.sourceforge.jwebunit.util.TestingEngineRegistry;
 
-public class TesteFormProdutos {
+public class TesteFormFormaPgto {
 
     @Before
     public void prepare() {
@@ -23,7 +23,7 @@ public class TesteFormProdutos {
 
     @Test
     public void test() {
-        beginAt("admin/lista_produto.xhtml");
+        beginAt("admin/lista_formaPgto.xhtml");
         assertTitleEquals("Login");
         assertTextPresent("Login");
         setTextField("j_username", "admin@admin.com");
@@ -36,22 +36,15 @@ public class TesteFormProdutos {
         assertElementPresent("form:produto");
         assertElementPresent("form:cliente");
         assertElementPresent("form:formaPgto");
-        clickLink("form:produto");
+        clickLink("form:formaPgto");
 
-        gotoPage("admin/lista_produto.xhtml");
-        assertTextPresent("Lista de Produtos");
-        assertElementPresent("form:tbl");
-        assertTextInElement("form:tbl:0:prodId", "8");
-        assertTextInElement("form:tbl:0:prodNome", "açúcar");
-        assertTextInElement("form:tbl:0:prodPreco", "10.0");
+        assertTitleEquals("Lista de Formas de Pagamento");
+        assertTextInElement("form:tbl:0:pgtoId", "1");
+        assertTextInElement("form:tbl:0:pgtoDesc", "Boleto");
+        assertTextInElement("form:tbl:0:pgtoParc", "1");
 
-        assertTextInElement("form:tbl:1:prodId", "7");
-        assertTextInElement("form:tbl:1:prodNome", "Açúcar mascavo");
-        assertTextInElement("form:tbl:1:prodPreco", "13.1");
-
-        assertTextInElement("form:tbl:5:prodId", "4");
-        assertTextInElement("form:tbl:5:prodNome", "Pamonha");
-        assertTextInElement("form:tbl:5:prodPreco", "12.32");
+        assertTextInElement("form:tbl:1:pgtoId", "2");
+        assertTextInElement("form:tbl:1:pgtoDesc", "Cheque");
+        assertTextInElement("form:tbl:1:pgtoParc", "2");
     }
-
 }

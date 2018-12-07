@@ -1,6 +1,6 @@
 package br.com.virtual.testes;
 
-import static org.junit.Assert.;
+import static org.junit.Assert.*;
 
 import org.junit.*;
 
